@@ -1,4 +1,8 @@
 <resources>
     <string name="app_name">Character Generator</string>
     <string name="placeholdertext">PlaceholderText</string>
+    <string name="welcome_username">Welcome, [username]!</string>
+    <string name="saved_characters">Saved Characters</string>
+    <string name="generate_a_new_character">Generate a New Character</string>
+    <string name="settings">Settings</string>
 </resources>

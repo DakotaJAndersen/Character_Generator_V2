@@ -7,25 +7,57 @@
     tools:context=".MainActivity">
 
     <TextView
-        android:id="@+id/generatorDisplayTextView"
-        android:layout_width="390dp"
-        android:layout_height="200dp"
-        android:layout_marginTop="16dip"
+        android:id="@+id/generatorWelcomeTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="16dp"
         android:padding="8dp"
-        android:text="Hello World!"
+        android:text="@string/welcome_username"
+        android:textSize="32sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
-    
-    <TextView
-        android:id="@+id/PlaceholderTextView"
+
+    <Button
+        android:id="@+id/generatorSavedCharactersButton"
         android:layout_width="250dp"
-        android:layout_height="45dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="8dp"
-        android:text="@string/placeholdertext"
-        android:textSize="32sp"
+        android:layout_height="75dp"
+        android:layout_marginTop="32dp"
+        android:text="@string/saved_characters"
+        android:textSize="22sp"
+        android:backgroundTint="@color/black"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/generatorDisplayTextView" />
+        app:layout_constraintTop_toBottomOf="@+id/generatorWelcomeTextView"/>
+
+    <Button
+        android:id="@+id/generatorGenerateButton"
+        android:layout_width="250dp"
+        android:layout_height="85dp"
+        android:layout_marginTop="32dp"
+        android:text="@string/generate_a_new_character"
+        android:textSize="22sp"
+        android:backgroundTint="@color/black"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/generatorSavedCharactersButton"/>
+
+    <Button
+        android:id="@+id/generatorSettingsButton"
+        android:layout_width="250dp"
+        android:layout_height="75dp"
+        android:layout_marginTop="32dp"
+        android:text="@string/settings"
+        android:textSize="22sp"
+        android:backgroundTint="@color/black"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/generatorGenerateButton"/>
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
