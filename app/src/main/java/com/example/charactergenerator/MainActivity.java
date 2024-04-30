@@ -27,9 +27,22 @@ public class MainActivity extends AppCompatActivity {
                 openSavedCharacters();
             }
         });
+
+        binding.generatorGenerateButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                openGenerateCharacter();
+            }
+        });
     }
     private void openSavedCharacters(){
         Intent intent = new Intent(this, SavedCharacters.class);
+        startActivity(intent);
+
+    }
+
+    private void openGenerateCharacter(){
+        Intent intent = new Intent(this, GenerateCharacter.class);
         startActivity(intent);
 
     }
