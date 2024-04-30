@@ -6,6 +6,10 @@ android {
     namespace = "com.example.charactergenerator"
     compileSdk = 34
 
+    buildFeatures{
+        viewBinding = true
+    }
+
     defaultConfig {
         applicationId = "com.example.charactergenerator"
         minSdk = 29
