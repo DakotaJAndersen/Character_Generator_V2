@@ -4,9 +4,10 @@ import static com.example.charactergenerator.databinding.ActivityMainBinding.inf
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.Toast;
+//import android.widget.Toast;
 
 import com.example.charactergenerator.databinding.ActivityMainBinding;
 
@@ -23,8 +24,13 @@ public class MainActivity extends AppCompatActivity {
         binding.generatorSavedCharactersButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(MainActivity.this, "Saved Character Screen not yet implemented", Toast.LENGTH_SHORT).show();
+                openSavedCharacters();
             }
         });
+    }
+    private void openSavedCharacters(){
+        Intent intent = new Intent(this, SavedCharacters.class);
+        startActivity(intent);
+
     }
 }
