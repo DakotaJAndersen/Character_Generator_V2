@@ -5,4 +5,7 @@
     <string name="saved_characters">Saved Characters</string>
     <string name="generate_a_new_character">Generate a New Character</string>
     <string name="settings">Settings</string>
+    <string name="generate_new_character">Generate New Character</string>
+    <string name="saved_characters_title">Saved Characters</string>
+    <string name="saved_character_default_text">No character yet saved. Go back and select Generate a New Character, then hit the Save button to save a character!</string>
 </resources>

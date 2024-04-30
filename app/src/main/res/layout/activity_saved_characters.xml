@@ -7,4 +7,35 @@
     android:layout_height="match_parent"
     tools:context=".SavedCharacters">
 
+    <TextView
+        android:id="@+id/generatorSavedCharactersTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="16dp"
+        android:padding="8dp"
+        android:text="@string/saved_characters_title"
+        android:textSize="32sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/generatorSavedCharacterDetails"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="16dp"
+        android:padding="8dp"
+        android:text="@string/saved_character_default_text"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/generatorSavedCharactersTitle" />
+
+
+
+
 </androidx.constraintlayout.widget.ConstraintLayout>
