@@ -11,4 +11,6 @@
     <string name="character_details_placeholder">[Character details will go here]</string>
     <string name="generate_new_from_generator_screen_button_text">Generate a New Character</string>
     <string name="save_character">Save Character</string>
+    <string name="change_password">Change Password</string>
+    <string name="edit_saved_characters">Edit Saved Characters</string>
 </resources>

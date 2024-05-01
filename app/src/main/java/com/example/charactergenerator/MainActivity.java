@@ -11,6 +11,7 @@ import android.view.View;
 
 import com.example.charactergenerator.databinding.ActivityMainBinding;
 
+/** @noinspection Convert2Lambda*/
 public class MainActivity extends AppCompatActivity {
 
     ActivityMainBinding binding;
@@ -34,6 +35,14 @@ public class MainActivity extends AppCompatActivity {
                 openGenerateCharacter();
             }
         });
+
+        binding.generatorSettingsButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                openSettings();
+            }
+        });
+
     }
     private void openSavedCharacters(){
         Intent intent = new Intent(this, SavedCharacters.class);
@@ -46,4 +55,11 @@ public class MainActivity extends AppCompatActivity {
         startActivity(intent);
 
     }
+
+    private void openSettings(){
+        Intent intent = new Intent(this, Settings.class);
+        startActivity(intent);
+
+    }
+
 }
