@@ -41,4 +41,12 @@ dependencies {
     testImplementation("junit:junit:4.13.2")
     androidTestImplementation("androidx.test.ext:junit:1.1.5")
     androidTestImplementation("androidx.test.espresso:espresso-core:3.5.1")
+
+    //This is a terrible idea but it might be the only way: I've hardcoded the version of room.
+    //My gradle is in kotlin for some reason and I do not have time to reach out and find out why.
+    //Nor do I have time to RESTART MY PROJECT GOOD LORD
+    implementation( "androidx.room:room-runtime:2.6.1")
+    annotationProcessor( "androidx.room:room-compiler:2.6.1")
+
+
 }
