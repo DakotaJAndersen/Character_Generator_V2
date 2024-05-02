@@ -17,7 +17,7 @@ import java.util.concurrent.Executors;
 @Database(entities = {HairType.class, SavedCharacters.class}, version = 1, exportSchema = false)
 public abstract class CharacterGeneratorDatabase extends RoomDatabase {
 
-    private static final String DATABASE_NAME = "CharacterGeneratorDatabase"
+    private static final String DATABASE_NAME = "CharacterGeneratorDatabase";
     public static final String hairTypeTable = "hairTypeTable";
 
     private static volatile CharacterGeneratorDatabase INSTANCE;
@@ -51,4 +51,6 @@ public abstract class CharacterGeneratorDatabase extends RoomDatabase {
 
 
     }
+
+    public abstract HairTypeDAO hairTypeDAO();
 }
