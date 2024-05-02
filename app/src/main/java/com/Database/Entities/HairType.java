@@ -4,9 +4,11 @@ import androidx.annotation.NonNull;
 import androidx.room.Entity;
 import androidx.room.PrimaryKey;
 
+import com.Database.CharacterGeneratorDatabase;
+
 import java.util.Objects;
 
-@Entity(tableName = "hairType")
+@Entity(tableName = CharacterGeneratorDatabase.hairTypeTable)
 public class HairType {
     @PrimaryKey(autoGenerate = true)
     @NonNull

@@ -12,8 +12,8 @@ import java.util.List;
 @Dao
 public interface HairTypeDAO {
     @Insert(onConflict= OnConflictStrategy.REPLACE)
-    public void insert(HairType ht1);
+    void insert(HairType ht1);
 
-    @Query("Select * from " + CharacterGeneratorDatabase.hairTypeTable);
+    @Query("Select * from " + CharacterGeneratorDatabase.hairTypeTable)
     List<HairType> getAllRecords();
 }
