@@ -4,7 +4,7 @@ import android.app.Application;
 
 import com.Database.Entities.HairType;
 
-import java.util.ArrayList;
+import java.util.List;
 import java.util.concurrent.Callable;
 import java.util.concurrent.ExecutionException;
 import java.util.concurrent.Future;
@@ -12,7 +12,7 @@ import java.util.concurrent.Future;
 public class CharacterGeneratorRepository {
     private HairTypeDAO htDAO;
     public HairType hairType;
-    private ArrayList<HairType> allHairTypes;
+    private List<HairType> allHairTypes;
 
     public CharacterGeneratorRepository(Application application) {
         CharacterGeneratorDatabase db = CharacterGeneratorDatabase.getDatabase(application);
@@ -20,11 +20,11 @@ public class CharacterGeneratorRepository {
         this.allHairTypes = this.htDAO.getAllRecords();
     }
 
-    public ArrayList<HairType> getAllLogs() {
-        Future<ArrayList<HairType>> future = CharacterGeneratorDatabase.databaseWriteExecutor.submit(
-                new Callable<ArrayList<HairType>>() {
+    public List<HairType> getAllHairTypes() {
+        Future<List<HairType>> future = CharacterGeneratorDatabase.databaseWriteExecutor.submit(
+                new Callable<List<HairType>>() {
                     @Override
-                    public ArrayList<HairType> call() throws Exception {
+                    public List<HairType> call() throws Exception {
                         return htDAO.getAllRecords();
                     }
                 }

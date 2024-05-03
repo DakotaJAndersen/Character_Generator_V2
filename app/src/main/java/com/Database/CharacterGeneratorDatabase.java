@@ -9,12 +9,12 @@ import androidx.room.RoomDatabase;
 import androidx.sqlite.db.SupportSQLiteDatabase;
 
 import com.Database.Entities.HairType;
-import com.Database.Entities.SavedCharacters;
+
 
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
-@Database(entities = {HairType.class, SavedCharacters.class}, version = 1, exportSchema = false)
+@Database(entities = {HairType.class}, version = 1, exportSchema = false)
 public abstract class CharacterGeneratorDatabase extends RoomDatabase {
 
     private static final String DATABASE_NAME = "CharacterGeneratorDatabase";
@@ -32,6 +32,8 @@ public abstract class CharacterGeneratorDatabase extends RoomDatabase {
                                     DATABASE_NAME
                                     )
                             .fallbackToDestructiveMigration()
+                            //this is commented out due to studio yelling at me and I can't
+                            //figure out why?  It doesn't let me declare addDefaultValues.
                             //.addCallback(addDefaultValues)
                             .build();
 
@@ -39,6 +41,9 @@ public abstract class CharacterGeneratorDatabase extends RoomDatabase {
             }
         }
         return INSTANCE;
+
+        //This is where we're supposed to be able to declare addDefault Values but studio won't
+        //let me do it.  It complains no matter how I do it.
         /*
         private static final RoomDatabase.Callback addDefaultValues = new RoomDatabase.Callback(){
             @Override

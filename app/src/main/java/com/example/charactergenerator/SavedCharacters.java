@@ -18,7 +18,8 @@ public class SavedCharacters extends AppCompatActivity {
         EdgeToEdge.enable(this);
         setContentView(R.layout.activity_saved_characters);
         //Following line makes saved character details scroll
-        binding.generatorSavedCharacterDetails.setMovementMethod(new ScrollingMovementMethod());
+        //--commented out due to causing null pointer exception error
+        //binding.generatorSavedCharacterDetails.setMovementMethod(new ScrollingMovementMethod());
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
             Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
