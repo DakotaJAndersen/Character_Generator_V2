@@ -28,7 +28,7 @@ public class CharacterGeneratorRepository {
                         return htDAO.getAllRecords();
                     }
                 }
-        );
+            );
         try {
             return future.get();
         } catch (InterruptedException | ExecutionException e) {
