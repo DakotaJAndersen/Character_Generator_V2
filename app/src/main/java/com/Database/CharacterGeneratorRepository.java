@@ -1,9 +1,11 @@
 package com.Database;
 
 import android.app.Application;
+import android.util.Log;
 
 import com.Database.Entities.HairType;
 import com.Database.Entities.User;
+import com.example.charactergenerator.MainActivity;
 
 import java.util.List;
 import java.util.concurrent.Callable;
@@ -16,7 +18,9 @@ public class CharacterGeneratorRepository {
     public HairType hairType;
     private List<HairType> allHairTypes;
 
-    public CharacterGeneratorRepository(Application application) {
+    private static CharacterGeneratorRepository repository;
+
+    private CharacterGeneratorRepository(Application application) {
         CharacterGeneratorDatabase db = CharacterGeneratorDatabase.getDatabase(application);
         this.htDAO = db.hairTypeDAO();
         this.allHairTypes = this.htDAO.getAllRecords();
@@ -36,6 +40,26 @@ public class CharacterGeneratorRepository {
             return future.get();
         } catch (InterruptedException | ExecutionException e) {
             e.printStackTrace();
+        }
+        return null;
+    }
+
+    public static CharacterGeneratorRepository getRepository(Application application){
+        if(repository!= null){
+            return repository;
+        }
+        Future<CharacterGeneratorRepository> future = CharacterGeneratorDatabase.databaseWriteExecutor.submit(
+                new Callable<CharacterGeneratorRepository>() {
+                    @Override
+                    public CharacterGeneratorRepository call() throws Exception {
+                        return new CharacterGeneratorRepository(application);
+                    }
+                }
+        );
+        try{
+            return future.get();
+        }catch(InterruptedException | ExecutionException e){
+            Log.d(MainActivity.TAG, "Problem getting CharacterGeneratorRepository, thread error.");
         }
         return null;
     }

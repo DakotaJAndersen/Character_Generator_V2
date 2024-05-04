@@ -29,6 +29,8 @@ public class MainActivity extends AppCompatActivity {
         binding = inflate(getLayoutInflater());
         setContentView(binding.getRoot());
 
+        repository = CharacterGeneratorRepository.getRepository(getApplication());
+
         binding.generatorSavedCharactersButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
