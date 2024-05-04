@@ -2,6 +2,7 @@ package com.example.charactergenerator;
 
 import static com.example.charactergenerator.databinding.ActivityMainBinding.inflate;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
@@ -10,6 +11,7 @@ import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.Toast;
 //import android.widget.Toast;
 
 import com.Database.CharacterGeneratorRepository;
@@ -70,7 +72,8 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void loginUser() {
-        //TODO: create login method
+        //TODO: make login method functional
+        user = new User("Drew", "password");
     }
 
     @Override
@@ -84,8 +87,21 @@ public class MainActivity extends AppCompatActivity {
     public boolean onPrepareOptionsMenu(Menu menu){
         MenuItem item = menu.findItem(R.id.menuLogout);
         item.setVisible(true);
-        item.setTitle("usernamePlaceholder)");
+        item.setTitle(user.getUsername());
+        item.setOnMenuItemClickListener(new MenuItem.OnMenuItemClickListener(){
+            @Override
+            public boolean onMenuItemClick(@NonNull MenuItem item){
+                Toast.makeText(MainActivity.this, "Logout to be implemented", Toast.LENGTH_SHORT).show();
+                logout();
+                return false;
+            }
+        });
         return true;
+    }
+
+    private void logout() {
+        //Todo: Finish logout method
+        startActivity(LoginActivity.loginIntentFactory(getApplicationContext()));
     }
 
     private void openSavedCharacters(){
