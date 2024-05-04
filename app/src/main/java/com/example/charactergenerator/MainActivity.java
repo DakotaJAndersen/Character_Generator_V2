@@ -6,11 +6,16 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 //import android.widget.Toast;
 
 import com.Database.CharacterGeneratorRepository;
+import com.Database.Entities.User;
 import com.example.charactergenerator.databinding.ActivityMainBinding;
+
 
 /** @noinspection Convert2Lambda*/
 public class MainActivity extends AppCompatActivity {
@@ -21,7 +26,8 @@ public class MainActivity extends AppCompatActivity {
     public static final String TAG = "CHARACTER_GENERATOR";
 
     //TODO:Add login information
-    int loggedInUserId = -1;
+    private int loggedInUserId = -1;
+    private User user;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,6 +36,8 @@ public class MainActivity extends AppCompatActivity {
         setContentView(binding.getRoot());
 
         loginUser();
+
+        invalidateOptionsMenu();
 
         if(loggedInUserId == -1){
             Intent intent = LoginActivity.loginIntentFactory(getApplicationContext());
@@ -63,6 +71,21 @@ public class MainActivity extends AppCompatActivity {
 
     private void loginUser() {
         //TODO: create login method
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu){
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.logout_menu, menu);
+        return true;
+    }
+
+    @Override
+    public boolean onPrepareOptionsMenu(Menu menu){
+        MenuItem item = menu.findItem(R.id.menuLogout);
+        item.setVisible(true);
+        item.setTitle("usernamePlaceholder)");
+        return true;
     }
 
     private void openSavedCharacters(){
