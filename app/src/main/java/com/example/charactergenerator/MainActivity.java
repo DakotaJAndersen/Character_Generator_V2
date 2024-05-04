@@ -29,6 +29,13 @@ public class MainActivity extends AppCompatActivity {
         binding = inflate(getLayoutInflater());
         setContentView(binding.getRoot());
 
+        loginUser();
+
+        if(loggedInUserId == -1){
+            Intent intent = LoginActivity.loginIntentFactory(getApplicationContext());
+            startActivity(intent);
+        }
+
         repository = CharacterGeneratorRepository.getRepository(getApplication());
 
         binding.generatorSavedCharactersButton.setOnClickListener(new View.OnClickListener() {
@@ -53,6 +60,11 @@ public class MainActivity extends AppCompatActivity {
         });
 
     }
+
+    private void loginUser() {
+        //TODO: create login method
+    }
+
     private void openSavedCharacters(){
         Intent intent = new Intent(this, SavedCharacters.class);
         startActivity(intent);

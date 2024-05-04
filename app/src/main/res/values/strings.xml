@@ -13,4 +13,9 @@
     <string name="save_character">Save Character</string>
     <string name="change_password">Change Password</string>
     <string name="edit_saved_characters">Edit Saved Characters</string>
+    <string name="character_generator_login_title">Character Generator</string>
+    <string name="please_log_in">Please log in:</string>
+    <string name="usernameHint">username</string>
+    <string name="loginScreenPasswordHint">password</string>
+    <string name="logInButtonText">Log In</string>
 </resources>
