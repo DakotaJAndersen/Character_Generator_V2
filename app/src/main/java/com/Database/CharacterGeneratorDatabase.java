@@ -35,7 +35,7 @@ public abstract class CharacterGeneratorDatabase extends RoomDatabase {
                             .fallbackToDestructiveMigration()
                             //this is commented out due to studio yelling at me and I can't
                             //figure out why?  It doesn't let me declare addDefaultValues.
-                            //.addCallback(addDefaultValues)
+                            .addCallback(addDefaultValues)
                             .build();
 
                 }
@@ -43,24 +43,18 @@ public abstract class CharacterGeneratorDatabase extends RoomDatabase {
         }
         return INSTANCE;
 
-        //This is where we're supposed to be able to declare addDefault Values but studio won't
-        //let me do it.  It complains no matter how I do it.
-        //UPDATE 5/3/24 source code in GymLog has changed.  Includes parts no longer concurrent
-        //with or applicable to CharacterGenerator.  Ignoring.
-        /*
-        private static final RoomDatabase.Callback addDefaultValues = onCreate(db) -> {
+    }
+        private static final RoomDatabase.Callback addDefaultValues = new RoomDatabase.Callback(){
             @Override
             public void onCreate(@NonNull SupportSQLiteDatabase db){
                 super.onCreate(db);
-                databaseWriteExecutor.execute(() -> {
-
-                }
+                //TODO: add databaseWriteExecutor.execute(() -> {...}
             }
         };
-        */
 
 
-    }
+
+
 
     public abstract HairTypeDAO hairTypeDAO();
 

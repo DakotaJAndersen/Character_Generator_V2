@@ -9,12 +9,19 @@ import android.os.Bundle;
 import android.view.View;
 //import android.widget.Toast;
 
+import com.Database.CharacterGeneratorRepository;
 import com.example.charactergenerator.databinding.ActivityMainBinding;
 
 /** @noinspection Convert2Lambda*/
 public class MainActivity extends AppCompatActivity {
 
     ActivityMainBinding binding;
+    private CharacterGeneratorRepository repository;
+
+    public static final String TAG = "CHARACTER_GENERATOR";
+
+    //TODO:Add login information
+    int loggedInUserId = -1;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
