@@ -4,6 +4,7 @@ import static com.example.charactergenerator.databinding.ActivityMainBinding.inf
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -15,13 +16,14 @@ import com.example.charactergenerator.databinding.ActivityMainBinding;
 /** @noinspection Convert2Lambda*/
 public class MainActivity extends AppCompatActivity {
 
+    private static final String MAIN_ACTIVITY_USER_ID = "com.example.charactergenerator.MAIN_ACTIVITY_USER_ID";
     ActivityMainBinding binding;
     private CharacterGeneratorRepository repository;
 
     public static final String TAG = "CHARACTER_GENERATOR";
 
     //TODO:Add login information
-    int loggedInUserId = -1;
+    int loggedInUserId = getIntent().getIntExtra(MAIN_ACTIVITY_USER_ID, -1);
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -63,6 +65,14 @@ public class MainActivity extends AppCompatActivity {
 
     private void loginUser() {
         //TODO: create login method
+        loggedInUserId=getIntent().getIntExtra(MAIN_ACTIVITY_USER_ID, -1);
+
+    }
+
+    static Intent mainActivityIntentFactory(Context context, int userID){
+        Intent intent = new Intent(context, MainActivity.class);
+        intent.putExtra(MAIN_ACTIVITY_USER_ID, userID);
+        return intent;
     }
 
     private void openSavedCharacters(){
