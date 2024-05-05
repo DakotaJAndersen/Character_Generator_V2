@@ -33,4 +33,7 @@
     <string name="manage_user_placeholder_text_view">This is where I want the User Table to be pulled and display each user alphabetically by username. Ideally I\'d want the user to be a selectable item via radio button so that one user can be selected at a time.</string>
     <string name="delete_selected_user">Delete Selected User</string>
     <string name="edit_selected_user">Edit Selected User</string>
+    <string name="manage_lists_placeholder_text_view">This is where I want to pull the database for the titles of each table. Ideally I would like each to be selectable via radio button, so that only one could be selectable at a time, and then be actionable upon with the below buttons.</string>
+    <string name="add_attributes">Add Attributes</string>
+    <string name="edit_attributes">Edit Attributes</string>
 </resources>
