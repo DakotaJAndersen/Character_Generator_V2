@@ -5,10 +5,10 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Settings">
+    tools:context=".SettingsActivity">
 
     <Button
-        android:id="@+id/generatorChangePassword"
+        android:id="@+id/generatorChangePasswordButton"
         android:layout_width="250dp"
         android:layout_height="75dp"
         android:layout_marginTop="64dp"
@@ -32,6 +32,6 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/generatorChangePassword" />
+        app:layout_constraintTop_toBottomOf="@id/generatorChangePasswordButton" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

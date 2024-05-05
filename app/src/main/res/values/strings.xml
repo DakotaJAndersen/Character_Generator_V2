@@ -18,4 +18,11 @@
     <string name="usernameHint">username</string>
     <string name="loginScreenPasswordHint">password</string>
     <string name="logInButtonText">Log In</string>
+    <string name="enter_your_old_password_here">Enter Your Old Password Here</string>
+    <string name="old_password">Old Password</string>
+    <string name="enter_new_password">Enter Your New Password Here</string>
+    <string name="new_password">New Password</string>
+    <string name="confirm_your_new_password_here">Confirm Your New Password Here</string>
+    <string name="change_password_for_button">Change Password</string>
+    <string name="new_password_again">New Password Again</string>
 </resources>

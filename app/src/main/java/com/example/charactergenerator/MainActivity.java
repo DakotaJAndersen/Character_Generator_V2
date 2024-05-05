@@ -6,7 +6,6 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
@@ -37,8 +36,8 @@ public class MainActivity extends AppCompatActivity {
 
     public static final String TAG = "CHARACTER_GENERATOR";
 
-    //TODO:Add login information
-    private int loggedInUserId = -1;
+    //Note: Login not currently in use.  TODO:Add login information
+    //private int loggedInUserId = -1;
     private User user;
 
     @Override
@@ -166,7 +165,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void openSettings(){
-        Intent intent = new Intent(this, Settings.class);
+        Intent intent = new Intent(this, SettingsActivity.class);
         startActivity(intent);
 
     }
