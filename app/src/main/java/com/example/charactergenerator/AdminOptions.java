@@ -14,6 +14,7 @@ import androidx.core.view.WindowInsetsCompat;
 public class AdminOptions extends AppCompatActivity {
 
     Button generatorManageUsersButton;
+    Button generatorManageListsButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -21,11 +22,20 @@ public class AdminOptions extends AppCompatActivity {
         setContentView(R.layout.activity_admin_options);
 
         generatorManageUsersButton = findViewById(R.id.generatorManageUsersButton);
+        generatorManageListsButton = findViewById(R.id.generatorManageListsButton);
 
         generatorManageUsersButton.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View view){
                 Intent intent = new Intent(AdminOptions.this, ManageUsers.class);
+                startActivity(intent);
+            }
+        });
+
+        generatorManageListsButton.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View view){
+                Intent intent = new Intent(AdminOptions.this, ManageLists.class);
                 startActivity(intent);
             }
         });
