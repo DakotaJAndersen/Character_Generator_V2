@@ -30,4 +30,7 @@
     <string name="admin_options">Admin Options</string>
     <string name="manage_users">Manage Users</string>
     <string name="manage_lists">Manage Lists</string>
+    <string name="manage_user_placeholder_text_view">This is where I want the User Table to be pulled and display each user alphabetically by username. Ideally I\'d want the user to be a selectable item via radio button so that one user can be selected at a time.</string>
+    <string name="delete_selected_user">Delete Selected User</string>
+    <string name="edit_selected_user">Edit Selected User</string>
 </resources>
