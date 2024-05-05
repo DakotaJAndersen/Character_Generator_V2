@@ -22,7 +22,6 @@ import com.example.charactergenerator.databinding.ActivityMainBinding;
 
 
 /**
- * @noinspection Convert2Lambda
  * @author Dakota Andersen
  * Title: Character Generator
  * Description: This is an application intended to create
@@ -63,6 +62,7 @@ public class MainActivity extends AppCompatActivity {
 
         repository = CharacterGeneratorRepository.getRepository(getApplication());
 
+        //Makes the Saved Characters button direct to Saved Characters screen
         binding.generatorSavedCharactersButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -70,6 +70,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        //Makes Generate Character button direct to Generate Character screen
         binding.generatorGenerateButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -77,6 +78,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        //Makes Settings button direct to Settings screen
         binding.generatorSettingsButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -84,7 +86,16 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        binding.generatorAdminOptionsButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                openAdminOptions();
+            }
+        });
+
     }
+
+
 
 
     //NOTE: NO LONGER USING LOGIN DUE TO ERRORS
@@ -95,6 +106,7 @@ public class MainActivity extends AppCompatActivity {
     }
      */
 
+    //The following code relates to the Options menu (Logout menu)
     @Override
     public boolean onCreateOptionsMenu(Menu menu){
         MenuInflater inflater = getMenuInflater();
@@ -106,6 +118,7 @@ public class MainActivity extends AppCompatActivity {
     public boolean onPrepareOptionsMenu(Menu menu){
         MenuItem item = menu.findItem(R.id.menuLogout);
         item.setVisible(true);
+        //This commented out line would make the Options menu (logout menu) display username instead of Logged In
         //item.setTitle(user.getUsername());
         item.setOnMenuItemClickListener(new MenuItem.OnMenuItemClickListener(){
             @Override
@@ -117,6 +130,7 @@ public class MainActivity extends AppCompatActivity {
         return true;
     }
 
+    //Follows: Dialog box for Logging Out (note: login not currently implemented)
     private void showLogoutDialog() {
         AlertDialog.Builder alertBuilder = new AlertDialog.Builder(MainActivity.this);
         final AlertDialog alertDialog = alertBuilder.create();
@@ -143,6 +157,7 @@ public class MainActivity extends AppCompatActivity {
     });
         alertBuilder.create().show();
     }
+    //End dialog box code
 
     //NOTE: LOGIN SCREEN NOT CURRENTLY IN USE
     /*
@@ -152,22 +167,31 @@ public class MainActivity extends AppCompatActivity {
     }
      */
 
+    //This method makes the button press for Saved Characters run.
     private void openSavedCharacters(){
         Intent intent = new Intent(this, SavedCharacters.class);
         startActivity(intent);
 
     }
 
+    //This method makes the button press for Generate Character run.
     private void openGenerateCharacter(){
         Intent intent = new Intent(this, GenerateCharacter.class);
         startActivity(intent);
 
     }
 
+    //This method makes the button press for Settings run.
     private void openSettings(){
         Intent intent = new Intent(this, SettingsActivity.class);
         startActivity(intent);
 
+    }
+
+    //This method makes the button press for AdminOptions run.
+    private void openAdminOptions() {
+        Intent intent = new Intent (this, AdminOptions.class);
+        startActivity(intent);
     }
 
 

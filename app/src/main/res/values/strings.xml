@@ -27,4 +27,7 @@
     <string name="new_password_again">New Password Again</string>
     <string name="edit_saved_characters_details_placeholder">This text is placeholder for a saved character. In an ideal world this character would have a checkbox a user could select for deletion for each character so that user could choose which characters to remove from their saved characters list.</string>
     <string name="remove_selected_characters">Remove Selected Characters</string>
+    <string name="admin_options">Admin Options</string>
+    <string name="manage_users">Manage Users</string>
+    <string name="manage_lists">Manage Lists</string>
 </resources>
