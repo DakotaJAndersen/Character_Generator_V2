@@ -6,6 +6,7 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
@@ -39,14 +40,20 @@ public class MainActivity extends AppCompatActivity {
         binding = inflate(getLayoutInflater());
         setContentView(binding.getRoot());
 
-        loginUser();
+
+        //NOTE: NO LONGER USING LOGIN DUE TO ERRORS
+        //loginUser();
 
         invalidateOptionsMenu();
 
+
+        //NOTE: NO LONGER USING LOGIN DUE TO ERRORS
+        /*
         if(loggedInUserId == -1){
             Intent intent = LoginActivity.loginIntentFactory(getApplicationContext());
             startActivity(intent);
         }
+         */
 
         repository = CharacterGeneratorRepository.getRepository(getApplication());
 
@@ -73,10 +80,14 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
+
+    //NOTE: NO LONGER USING LOGIN DUE TO ERRORS
+    /*
     private void loginUser() {
         //TODO: make login method functional
         user = new User("Drew", "password");
     }
+     */
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu){
@@ -89,7 +100,7 @@ public class MainActivity extends AppCompatActivity {
     public boolean onPrepareOptionsMenu(Menu menu){
         MenuItem item = menu.findItem(R.id.menuLogout);
         item.setVisible(true);
-        item.setTitle(user.getUsername());
+        //item.setTitle(user.getUsername());
         item.setOnMenuItemClickListener(new MenuItem.OnMenuItemClickListener(){
             @Override
             public boolean onMenuItemClick(@NonNull MenuItem item){
@@ -109,7 +120,13 @@ public class MainActivity extends AppCompatActivity {
         alertBuilder.setPositiveButton("logout", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
-                logout();
+                //logout();
+                CharSequence text = "Login not yet implemented.";
+                int duration = Toast.LENGTH_SHORT;
+
+                Toast toast = Toast.makeText(MainActivity.this, text, duration);
+                toast.show();
+                alertDialog.dismiss();
             }
         });
     alertBuilder.setNegativeButton("cancel", new DialogInterface.OnClickListener() {
@@ -121,10 +138,13 @@ public class MainActivity extends AppCompatActivity {
         alertBuilder.create().show();
     }
 
+    //NOTE: LOGIN SCREEN NOT CURRENTLY IN USE
+    /*
     private void logout() {
         //Todo: Finish logout method
         startActivity(LoginActivity.loginIntentFactory(getApplicationContext()));
     }
+     */
 
     private void openSavedCharacters(){
         Intent intent = new Intent(this, SavedCharacters.class);
