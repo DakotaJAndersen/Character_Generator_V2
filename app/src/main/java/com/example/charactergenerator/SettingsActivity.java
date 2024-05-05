@@ -18,6 +18,7 @@ import com.example.charactergenerator.databinding.ActivitySettingsBinding;
 public class SettingsActivity extends AppCompatActivity {
 
     Button generatorChangePasswordButton;
+    Button generatorEditSavedCharactersButton;
 
 
     @Override
@@ -26,11 +27,20 @@ public class SettingsActivity extends AppCompatActivity {
         setContentView(R.layout.activity_settings);
 
         generatorChangePasswordButton = findViewById(R.id.generatorChangePasswordButton);
+        generatorEditSavedCharactersButton = findViewById(R.id.generatorEditSavedCharactersButton);
 
         generatorChangePasswordButton.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View view){
                 Intent intent = new Intent(SettingsActivity.this, ChangePassword.class);
+                startActivity(intent);
+            }
+        });
+
+        generatorEditSavedCharactersButton.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View view){
+                Intent intent = new Intent(SettingsActivity.this, EditSavedCharacters.class);
                 startActivity(intent);
             }
         });

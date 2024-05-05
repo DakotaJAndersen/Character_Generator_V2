@@ -25,4 +25,6 @@
     <string name="confirm_your_new_password_here">Confirm Your New Password Here</string>
     <string name="change_password_for_button">Change Password</string>
     <string name="new_password_again">New Password Again</string>
+    <string name="edit_saved_characters_details_placeholder">This text is placeholder for a saved character. In an ideal world this character would have a checkbox a user could select for deletion for each character so that user could choose which characters to remove from their saved characters list.</string>
+    <string name="remove_selected_characters">Remove Selected Characters</string>
 </resources>
