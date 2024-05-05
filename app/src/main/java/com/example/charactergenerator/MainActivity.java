@@ -22,7 +22,14 @@ import com.Database.Entities.User;
 import com.example.charactergenerator.databinding.ActivityMainBinding;
 
 
-/** @noinspection Convert2Lambda*/
+/**
+ * @noinspection Convert2Lambda
+ * @author Dakota Andersen
+ * Title: Character Generator
+ * Description: This is an application intended to create
+ * and optionally save randomly generated character descriptions
+ * with attributes selected from database tables.
+ * */
 public class MainActivity extends AppCompatActivity {
 
     ActivityMainBinding binding;
