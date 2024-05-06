@@ -73,5 +73,19 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/generatorPasswordField"/>
 
+    <Button
+        android:id="@+id/generatorSignUpButton"
+        android:layout_width="250dp"
+        android:layout_height="75dp"
+        android:layout_marginTop="16dp"
+        android:text="@string/sign_up"
+        android:textSize="22sp"
+        android:backgroundTint="@color/material_dynamic_primary20"
+        android:textColor="@color/white"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/generatorLogInButton"/>
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
